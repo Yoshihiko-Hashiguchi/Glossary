@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>用語削除</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <p>用語「{{ term.term }}」を本当に削除しますか？</p>
+        <input type="submit" value="削除">
+    </form>
+{% endblock %}

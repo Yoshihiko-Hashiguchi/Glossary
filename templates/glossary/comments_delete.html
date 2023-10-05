@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>コメント削除</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <p>{{ comment.user.username }}のコメント</p>
+        <p>「{{ comment.comment }}」</p>
+        <p>を本当に削除しますか？</p>
+        <input type="submit" value="削除">
+    </form>
+{% endblock %}

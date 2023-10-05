@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>用語編集</h3>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <br>
+        <input type="submit" value="送信">
+    </form>
+{% endblock %}

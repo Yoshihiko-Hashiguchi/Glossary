@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>ログイン</h3>
+    <form method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="ログイン">
+    <br><br>
+    <p>
+        初めての人はユーザー登録を行ってください。<br>
+        ユーザー登録は<a href="{% url 'accounts:user_regist' %}">こちら</a>から。
+    </p>
+{% endblock %}

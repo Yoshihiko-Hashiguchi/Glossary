@@ -1,0 +1,27 @@
+label[for="id_email"]{
+    text-align: left;
+}
+
+.username-class{
+    width: 150%;
+}
+
+.email-class{
+    width: 150%;
+}
+
+.target-class{
+    width: 150%;
+}
+
+.password-class{
+    width: 150%;
+}
+
+.term-class{
+    width: 50%;
+}
+
+.explanation-class{
+    width: 150%;
+}

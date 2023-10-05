@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>ユーザー削除</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <p>ユーザー情報も全て消えてしまい復元不可能となります。<br>
+        ユーザー「{{ user.username }}」を本当に削除しますか？</p>
+        <input type="submit" value="削除">
+    </form>
+{% endblock %}

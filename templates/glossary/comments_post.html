@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>
+        用語説明　　　　　
+        {% if user.is_authenticated %}
+            <a class="navbar-brand" href="{% url 'glossary:term_update' term_id=term.id %}">用語更新</a>
+            <a class="navbar-brand" href="{% url 'glossary:term_delete' term_id=term.id %}">用語削除</a>
+        {% endif %}
+    </h3>
+    <table class="table table-striped table-hover">
+        <tr>
+            <td>用語</td><td>{{ term.term }}</td>
+        </tr>
+        <tr>
+            <td>説明</td><td>{{ term.explanation | linebreaks }}</td>
+        </tr>
+        <tr>
+            <td>画像</td><td>
+            {% if term.picture %}
+                <img width=40% height=40% src="{{ term.picture.url }}">
+            {% else %}
+                🚧 準備中 🚧
+            {% endif %}
+            </td>
+        </tr>
+    </table>
+    {% if comments %}
+        <p>コメント欄</p>
+    {% endif %}
+    {% for comment in comments %}
+        <p>
+            {{ comment.user.username }} : {{ comment.comment }}　　　　　
+            {% if user.is_authenticated and comment.user.id == user.id %}
+                <a class="navbar-brand" href="{% url 'glossary:comment_delete' comment_id=comment.id %}">コメント削除</a>
+            {% endif %}
+        </p>
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="コメント送信">
+    </form>
+    {% endif %}
+{% endblock %}
