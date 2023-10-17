@@ -17,7 +17,7 @@ class Terms(models.Model):
     
     term = models.CharField(verbose_name="用語", max_length=50, unique=True)
     explanation = models.TextField(verbose_name="説明")
-    picture = models.FileField(verbose_name="画像", upload_to='picture/', blank=True)
+    picture = models.ImageField(verbose_name="画像", upload_to='picture/', blank=True)
     update_user = models.CharField(verbose_name="最終更新者", max_length=50, null=True, default=None)
     update_at = models.DateTimeField(verbose_name="更新日時", default=timezone.datetime.now)
     objects = TermsManager()

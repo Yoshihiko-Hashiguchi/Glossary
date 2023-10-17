@@ -15,7 +15,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates') # templateファイルを置く場所を指定する
-STATIC_DIR = os.path.join(BASE_DIR, 'static') # cssファイルを置く場所を指定する
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') # cssファイルを置く場所を指定する
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # 画像ファイルが置かれる場所を指定する
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/

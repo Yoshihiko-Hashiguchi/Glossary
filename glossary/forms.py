@@ -5,7 +5,7 @@ import datetime
 class TermCreateForm(forms.ModelForm):
     term = forms.CharField(label='用語')
     explanation = forms.CharField(label='説明', widget=forms.Textarea())
-    picture = forms.FileField(label='画像', required=False)
+    picture = forms.ImageField(label='画像', required=False)
     
     class Meta:
         model = Terms
@@ -15,7 +15,7 @@ class TermCreateForm(forms.ModelForm):
 class TermUpdateForm(forms.ModelForm):
     term = forms.CharField(label='用語')
     explanation = forms.CharField(label='説明', widget=forms.Textarea())
-    picture = forms.FileField(label='画像', required=False)
+    picture = forms.ImageField(label='画像', required=False)
     
     class Meta:
         model = Terms

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import Http404, HttpResponse
+from django.http import Http404
 from . import forms
 from .models import Terms, Comments
 from django.contrib import messages
