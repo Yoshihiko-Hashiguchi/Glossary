@@ -5,10 +5,10 @@
         <p id="RealtimeClockArea2">現在時刻：</p>
     </h5><br>
     {% if user.is_authenticated %}
-        <h3>☆Welcom☆</h3>
+        <h3>☆Welcome☆</h3>
         <h5>{{ user.username }}さん、今日も勉強頑張りましょう！</h5>
     {% else %}
-        <h3>☆Welcom☆</h3>
+        <h3>☆Welcome☆</h3>
         <h5>ログイン画面よりログインしてください。</h5>
     {% endif %}
 {% endblock %}
